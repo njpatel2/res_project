@@ -1,0 +1,158 @@
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+// import imageSrc from './images/navbarBg.jpg';
+import './Css/NavbarCss.css';
+
+
+const Navbar = () => {
+debugger;
+  const storedActiveItem = localStorage.getItem('activeNavItem') || 'dashboard'; // Retrieve stored active item or default to 'dashboard'
+  const [activeItem, setActiveItem] = useState(storedActiveItem);
+
+
+    // const [activeItem, setActiveItem] = useState('dashboard');
+  const [horiSelectorStyles, setHoriSelectorStyles] = useState({});
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu open/close
+  useEffect(() => {
+    debugger;
+    // Call handleNavItemClick to make "Dashboard" active when the page loads
+    const initialNavItem = document.querySelector(`.nav-item[data-item="${storedActiveItem}"]`);
+    console.log(initialNavItem);
+    if (initialNavItem) {
+    handleNavItemClick({ currentTarget: initialNavItem }, storedActiveItem);
+    }
+    else{
+      handleNavItemClick({ currentTarget: document.querySelector('.nav-item[data-item="dashboard"]') }, 'dashboard');
+
+    }
+  }, []);
+// const [horiSelectorStyles, setHoriSelectorStyles] = useState({
+//     // Set the initial styles for the hori-selector based on the "Dashboard" link
+//     width: '139px', // Adjust the width based on your design
+//     left: '644px',    // Adjust the left position based on your design
+//     top: '0px',  // Adjust the top position based on your design
+//     height: '46.5px',
+//   });
+  const handleNavItemClick = (event, item) => {
+    debugger;
+    setActiveItem(item);
+    localStorage.setItem('activeNavItem', item); // Store active item in localStorage
+
+    // setActiveItem(item);
+
+    const navItem = event.currentTarget;
+    const itemWidth = navItem.offsetWidth;
+    const itemLeft = navItem.offsetLeft;
+    const itemTop = navItem.offsetTop;
+
+    setHoriSelectorStyles({
+      width: `${itemWidth}px`,
+      left: `${itemLeft}px`,
+      top: `${itemTop}px`,
+      height: '46.5px',
+    });
+
+    // Close the menu when an item is clicked (for mobile view)
+    //setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    debugger;
+    const initialNavItem = document.querySelector(`.nav-item[data-item="${storedActiveItem}"]`);
+    
+    if (!isMenuOpen) {
+      // Only adjust the horiSelectorStyles if the menu is being opened
+      const activeNavItem = document.querySelector('.nav-item.active');
+     
+      if (initialNavItem) {
+        handleNavItemClick({ currentTarget: initialNavItem }, storedActiveItem);
+      }
+    }
+    setIsMenuOpen(!isMenuOpen);
+
+    const activeNavItem = document.querySelector('.nav-link.activeLink');
+    if (initialNavItem) {
+      debugger;
+      const itemWidth = initialNavItem.offsetWidth;
+      const itemLeft = initialNavItem.offsetLeft;
+      const itemTop = initialNavItem.offsetTop;
+
+      setHoriSelectorStyles({
+        width: `100%`,
+        left: `${itemLeft}px`,
+        top: `${itemTop}px`,
+        height: '46.5px',
+      });
+    }
+    
+  };
+
+  return (
+    // <nav className="navbar navbar-expand-custom navbar-mainbg" style={{ backgroundImage: `url(${imageSrc})` }}>
+    
+<nav className="navbar navbar-expand-custom navbar-mainbg">
+      <a className="navbar-brand navbar-logo" href="/">
+        Navbar
+      </a>
+      <button className="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleMenu}>
+        <i className="fas fa-bars text-white"></i>
+      </button>
+      <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarSupportedContent">
+        <ul className="navbar-nav ml-auto">
+        <div className="hori-selector" style={horiSelectorStyles}>
+            <div className="left"></div>
+            <div className="right"></div>
+          </div>
+          <li className="nav-item" data-item="dashboard">
+            <NavLink
+              className={`nav-link ${activeItem === 'dashboard' ? 'activeLink' : ''}`}
+              to="/"
+              onClick={(event) => handleNavItemClick(event, 'dashboard')}
+            >
+              <i className="fas fa-tachometer-alt"></i>Dashboard
+            </NavLink>
+          </li>
+          <li className="nav-item" data-item="location">
+            <NavLink
+              className={`nav-link ${activeItem === 'location' ? 'activeLink' : ''}`}
+              to="/location"
+              onClick={(event) => handleNavItemClick(event, 'location')}
+            >
+              <i className="fas fa-tachometer-alt"></i>Location
+            </NavLink>
+          </li>
+          <li className="nav-item" data-item="about">
+            <NavLink
+              className={`nav-link ${activeItem === 'about' ? 'activeLink' : ''}`}
+              to="/"
+              onClick={(event) => handleNavItemClick(event, 'about')}
+            >
+              <i className="fas fa-tachometer-alt"></i>about
+            </NavLink>
+          </li>
+          <li className="nav-item" data-item="feedback">
+            <NavLink
+              className={`nav-link ${activeItem === 'feedback' ? 'activeLink' : ''}`}
+              to="/"
+              onClick={(event) => handleNavItemClick(event, 'feedback')}
+            >
+              <i className="fas fa-tachometer-alt"></i>feedback
+            </NavLink>
+          </li>
+          <li className="nav-item" data-item="login">
+            <NavLink
+              className={`nav-link ${activeItem === 'login' ? 'activeLink' : ''}`}
+              to="/"
+              onClick={(event) => handleNavItemClick(event, 'login')}
+            >
+              <i className="fas fa-tachometer-alt"></i>login
+            </NavLink>
+          </li>
+          {/* Add other nav items similarly */}
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

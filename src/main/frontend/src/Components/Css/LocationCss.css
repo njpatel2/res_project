@@ -1,0 +1,634 @@
+
+.containerLocation {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .sectionLocation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sectionLocation:nth-child(1) {
+    background-color: #f0f0f0;
+    color: #aa1e1e;
+    /* height: 70vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .sectionLocation:nth-child(2) {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+  }
+  .sectionLocation:nth-child(3) {
+    background-color: #fff;
+    align-items: flex-start;
+  }
+  .sub-sectionLocation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.formLocation {
+  padding: 16px;
+  width: 320px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+.segmentLocation {
+  padding: 32px 0;
+  text-align: center;
+}
+
+.locationSubmitButton, .locationFormInput {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #EBECF0;
+  text-shadow: 1px 1px 0 #FFF;
+}
+
+label {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.locationFormInput {
+  margin-right: 8px;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.locationFormInput:focus {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.locationSubmitButton {
+  color: #61677C;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+.locationSubmitButton:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+.locationSubmitButton:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.locationSubmitButton .icon {
+  margin-right: 8px;
+}
+.locationSubmitButton.unit {
+  border-radius: 8px;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  font-size: 19.2px;
+}
+.locationSubmitButton.unit .icon {
+  margin-right: 0;
+}
+.locationSubmitButton.red {
+  display: block;
+  width: 100%;
+  color: #aa1e1e;
+}
+
+.locationFormInput-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.locationFormInput-group label {
+  margin: 0;
+  flex: 1;
+}
+.zipCodeText {
+    font-family: "Montserrat", sans-serif; /* Use your desired font family */
+    font-size: 36px; /* Adjust the font size as needed */
+    color: #aa1e1e; /* Set the text color */
+    text-shadow: 2px 3px 5px rgb(151 143 143);/* Add a text shadow */
+  }
+.flier {
+            pointer-events: none;
+        }
+
+        .flier>* {
+            /* Adjust animation duration to change the element’s speed */
+            animation: fly 70s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 1s;
+            
+        }
+
+        /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+        @keyframes fly {
+
+            98.001%,
+            0% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+
+            15% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+
+            15.001%,
+            16% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+
+            40% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+
+            40.001%,
+            41% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+
+            65% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+
+            65.001%,
+            66% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+
+            98% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            }
+        }
+        .flier2 {
+            pointer-events: none;
+        }
+
+        .flier2>* {
+            /* Adjust animation duration to change the element’s speed */
+            animation: fly2 70s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 500ms;
+            
+        }
+
+        /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+        @keyframes fly2 {
+
+            58.001%,
+            58.001% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+
+            75% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+
+            75.001%,
+            76% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+
+            93% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+
+            93.001%,
+            94% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+
+            25% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+
+            25.001%,
+            26% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+
+            58% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            }
+        }
+        .flier3 {
+            pointer-events: none;
+        }
+
+        .flier3>* {
+            /* Adjust animation duration to change the element’s speed */
+            animation: fly3 70s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 1s;
+            
+        }
+
+        /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+        @keyframes fly3 {
+
+            29.001%,
+            29.001% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+
+            46% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+
+            46.001%,
+            47% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+
+            61% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+
+            61.001%,
+            62% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+
+            82% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+
+            82.001%,
+            83% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+
+            28.99% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            }
+        }
+        .flier4 {
+            pointer-events: none;
+        }
+
+        .flier4>* {
+            /* Adjust animation duration to change the element’s speed */
+            animation: fly4 70s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 1500ms;
+            
+        }
+
+        /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+        @keyframes fly4 {
+
+            75.001%,
+            75.001% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+
+            99% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+
+            99.001%,
+            99.001% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+
+            10% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+
+            10.001%,
+            10.001% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+
+            33% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+
+            33.001%,
+            33.001% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+
+            74.99% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            }
+        }
+        .flier5 {
+            pointer-events: none;
+        }
+
+        .flier5>* {
+            /* Adjust animation duration to change the element’s speed */
+            animation: fly5 70s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 2s;
+            
+        }
+
+        /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+        @keyframes fly5 {
+
+            0.001%,
+            0.001% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+
+            35% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+
+            35.001%,
+            35.001% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+
+            49% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+
+            49.001%,
+            49.001% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+
+            53% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+
+            53.001%,
+            53.001% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+
+            99.99% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            } 
+        }
+        .flier6 {
+            pointer-events: none;
+        }
+
+        .flier6>* {
+            /* Adjust animation duration to change the element’s speed */
+            animation: fly6 70s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 2500ms;
+            
+        }
+
+        /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+        @keyframes fly6 {
+
+            15.001%,
+            15.001% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+
+            31% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+
+            31.001%,
+            31.001% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+
+            56% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+
+            56.001%,
+            56.001% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+
+            84% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+
+            84.001%,
+            84.001% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+
+            14.99% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            }
+        }
+        .store-list {
+            display: flex;
+            flex-wrap: wrap;
+            
+        
+        }
+        .store-cards{
+            width: 100%;
+        }
+        
+        .store-card {
+            /* flex: 1; */
+            width: 550px;
+            margin: 16px;
+            padding: 10px;
+            /* border: 1px solid #ccc; */
+            border-radius: 10px; /* Rounded corners for the card */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+          /* width: 100%; */
+          background-color: #fff;
+          z-index: 1;
+          position: relative;
+        }
+        
+        .store-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .store-image img {
+            width: 100%; /* Make the image occupy the entire square box */
+          height: 100%; /* Make the image occupy the entire square box */
+          object-fit: cover;
+          border-radius: 5px;
+        }
+        
+        .store-details {
+            flex: 1;
+            width: 100%; 
+        
+        }
+        .price-button-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline; /* Align items along the baseline */
+        }
+        
+        .price {
+          margin: 0; /* Remove margin from the paragraph */
+        }
+        .store-details p {
+            margin: 5px 0; /* Reduce top and bottom margin */
+        }
+        
+        .store-details h3 {
+            font-weight: bold;
+            margin: 0; /* Remove default margin */
+        }
+        
+        /* .add-to-cart-button {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 90%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: #aa1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        } */
+        .add-to-cart-button {
+            
+            padding: 5px 10px;
+            background-color: #aa1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            /* margin-top: 10px; */
+            margin-right: 10px;
+        }
+        /* For screens with a maximum width of 768px (typical mobile screens) */
+@media (max-width: 768px) {
+    .containerLocation {
+      /* height: auto;  */
+    }
+    
+    .sectionLocation {
+      height: auto; /* Remove fixed height */
+      flex-direction: column; /* Stack items vertically */
+    }
+    
+    .sectionLocation:nth-child(1) {
+      height: auto; /* Remove fixed height */
+      text-align: center; /* Center text vertically */
+    }
+  
+    .sectionLocation:nth-child(2) {
+      flex-direction: column; /* Stack items vertically */
+    }
+    
+    .locationFormInput,
+    .locationSubmitButton {
+      width: 100%; /* Make inputs and button full width */
+    }
+    .store-card {
+        flex-direction: row;
+        /* padding: 16px; */
+        width: 315px;
+         margin: 16px;   
+        
+       
+      }
+    
+      .store-image img {
+        width: 100%;
+        height: auto;
+      }
+      
+  }
+  
+  /* For screens with a minimum width of 769px (desktop screens) */
+  @media (min-width: 769px) {
+    .sectionLocation {
+      flex-direction: row; /* Keep items side by side */
+    }
+    .sectionLocation:nth-child(2) {
+    align-items: flex-start; 
+  }
+  .store-button:hover {
+    transform: scale(1.1); /* Apply a slight scale-up on hover */
+}
+}
+   
