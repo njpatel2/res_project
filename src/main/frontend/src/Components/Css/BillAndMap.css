@@ -1,0 +1,86 @@
+/* .sub-sectionRestaurant-BillMap {
+    padding: 10px !important;
+    margin-right: 0;
+    margin-bottom: 10px !important;
+  } */
+
+  .sub-sectionRestaurant-BillMap {
+    /* padding: 10px !important; */
+    /* border-radius: 10px; */
+    /* background-color: #ebf4f5;  */
+    overflow: hidden;
+    transform: translateX(100%); /* Initially, keep it hidden on the right */
+    animation: slideInFromRight 0.5s forwards;
+    
+  }
+  
+  .cart{
+    /* margin: 12px; */
+    border: none;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .data-table th, .data-table td {
+    padding: 10px;
+   /*  border: 1px solid #ccc; */
+    text-align: left;
+  }
+  
+  .table-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #aa1e1e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+  .column1 {
+    width: 70%;
+  }
+  
+  .column2 {
+    width: 30%;
+  }
+  
+  .google-map {
+    width: 100%;
+    /* padding-bottom: 100%;  */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%); /* Slide in from the right (100% of the element's width) */
+    }
+    to {
+      transform: translateX(0); /* Slide to the initial position (0) */
+    }
+  }
+
+
+
+
+  @media ( max-width : 768px) {
+    .sub-sectionRestaurant-BillMap {
+  margin-top: 10px;
+  border-radius: 10px;
+  }
+}
+@media ( min-width : 768px) {
+    .sub-sectionRestaurant-BillMap {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        margin: 10px;
+  }
+}

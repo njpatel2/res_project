@@ -53,15 +53,16 @@
 }
 
 .sectionRestaurant-BillMap .sub-section {
-	padding: 20px;
+	/* padding: 10px; */
 	/* border: 1px solid #ccc; */
-	border-radius: 10px; /* Rounded corners */
+	/* border-radius: 10px; */
 	overflow: auto; /* Prevent content from overflowing */
 }
 
 .sectionRestaurant-BillMap .sub-sectionRestaurant-product {
 	flex: 70%;
 	margin-right: 10px; /* Add margin between sub-sections */
+	padding: 10px;
 }
 
 .sectionRestaurant-BillMap .sub-sectionRestaurant-BillMap {
@@ -78,61 +79,7 @@
 	justify-content: space-between; /* Space between menu and products */
 }
 
-.menu {
-	list-style: none;
-	padding: 5px;
-	width: 125px; /* Limit the maximum width of the menu */
-	margin-right: 20px; /* Add margin between menu and products */
-	position: relative;
-    z-index: 100;
-}
 
-.menu h2 {
-	margin-bottom: 10px;
-}
-
-.menu-item {
-  margin-bottom: 10px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Add smooth transitions */
-  padding: 10px; /* Add padding for better visual */
-  border-radius: 10px; /* Add rounded corners */
-}
-
-.menu-item:hover {
-  background-color: #aa1e1e; /* Change background color on hover */
-  color: #fff; /* Change text color on hover */
-  transform: scale(1.05); /* Add a slight scale-up effect on hover */
-}
-
-
-
-
-.sub-menu {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  background-color: #fff;
-  /* border: 1px solid #ccc; */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 5px;
-  width: 150px;
-  animation: fadeInRight 0.3s ease; /* Add fade-in animation */
-  /* background-color: #f0f0f0; */
-  color: #000;
-
-}
-
-.menu-item:hover .sub-menu {
-  display: block;
-}
-
-.sub-menu li {
-  margin-bottom: 5px; /* Add spacing between options */
-}
 
 .product-list {
 	display: flex;
@@ -227,53 +174,7 @@
 	margin-right: 10px;
 }
 
-.sub-sectionRestaurant-BillMap {
-  padding: 20px;
- /*  border: 1px solid #ccc; */
-  border-radius: 10px;
-  overflow: hidden;
-}
 
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.data-table th, .data-table td {
-  padding: 10px;
- /*  border: 1px solid #ccc; */
-  text-align: left;
-}
-
-.table-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #aa1e1e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  transition: transform 0.2s ease;
-}
-.column1 {
-  width: 70%;
-}
-
-.column2 {
-  width: 30%;
-}
-
-.google-map {
-  width: 100%;
-  /* padding-bottom: 100%;  */
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
 /* .modal {
   display: none;
   position: fixed;
@@ -386,11 +287,7 @@
 		flex-direction: column;
 		
 	}
-	.sub-sectionRestaurant-BillMap {
-		padding: 10px !important;
-		margin-right: 0;
-		margin-bottom: 10px !important;
-	  }
+	
 	.sub-sectionRestaurant-product {
 		flex-direction: column;
 		padding: 0px;
@@ -402,27 +299,6 @@
 		/* border-radius: 10px; 
 		overflow: auto;  */
 	}
-	.menu {
-		padding: 13px;
-		width: auto;
-		
-	}
-	.menu-display {
-		display: none;
-	}
-	.menu-button {
-		position: fixed;
-		bottom: 10px;
-		left: 50%;
-		transform: translateX(-50%);
-		padding: 10px 20px;
-		background-color: #aa1e1e;
-		color: #fff;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		z-index: 1000; /* Place the button above other content */
-	}
 	.product-card {
 		width: 90%; /* Occupy full width in mobile view */
 	}
@@ -431,16 +307,7 @@
 	/* .modal-content {
     width: 90%;
   } */
-  .sub-sectionRestaurant-BillMap.menu-open {
-	display: block;
-  }
-  /* .menu-items {
-	display: none;
-  } */
   
-  .menu-open {
-	display: block;
-  }
   .search-input {
     width: 100%;
     max-width: 100%; /* Set maximum width to 100% on smaller screens */
@@ -456,9 +323,7 @@
 	.table-button:hover {
 		transform: scale(1.1); /* Apply a slight scale-up on hover */
 	}
-	.mobile-menu-button {
-		display: none;
-	  }
+	
 	  
 }
 

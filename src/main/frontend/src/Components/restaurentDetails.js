@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import "./Css/restaurentDetailsCss.css"; // Make sure to import your CSS file
+import "./Css/restaurentDetailsCss.css"; 
 
 import ProductCard from "./ProductCard";
 import RestaurantMainDetails from "./RestaurantMainDetails";
-import Menu from "./Menu";
+// import Menu from "./Menu";
 import BillAndMap from "./BillAndMap";
+
+import NewMenu from "./NewMenu";
 
 function RestaurentDetails() {
   let productDetails = [
@@ -40,7 +42,8 @@ function RestaurentDetails() {
 
       <div className="sectionRestaurant sectionRestaurant-BillMap">
         <div className="sub-section sub-sectionRestaurant-product ">
-          <Menu />
+          {/* <Menu /> */}
+          <NewMenu/>
 
           <div>
             <div className="sdiv">

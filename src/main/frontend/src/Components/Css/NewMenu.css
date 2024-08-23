@@ -1,0 +1,133 @@
+.menu {
+  position: relative;
+  top: 0;
+  /* left: -250px; Initially hidden off-screen for mobile */
+  /* width: 250px; Fixed width for both mobile and desktop */
+  width: 100%;
+  min-width: 250px;
+  height: 100%; /* Fixed height for both mobile and desktop */
+  min-height: 500px;
+  overflow-y: auto; /* Add vertical scrollbar when content exceeds height */
+  background-color: #f0f8ff; /* Very light green background */
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 20px 5px 20px 25px; /* Adjusted padding */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  z-index: 100;
+  transition: left 0.5s ease-in-out; /* Slower animation */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 5px; /* Adjusted margin */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+.menu li a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    /* box-shadow 0.2s ease-in-out, width 0.2s ease-in-out;  */
+  max-width: 90%; /* Adjusted width */
+  white-space: nowrap; /* Prevent text wrap */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis (...) to overflow text */
+}
+
+.menu li a:hover {
+  background-color: #d3ffd3; /* Very light green on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+
+.sub-menu {
+  display: none; /* Initially hidden */
+  margin-left: -5px; /* Adjusted margin to the left */
+  animation-duration: 0.5s; /* Animation duration */
+  animation-fill-mode: forwards; /* Keep last frame of animation */
+}
+
+.menu li.active .sub-menu {
+  display: block; /* Display sub-menu when parent item is active */
+}
+
+/* Animation for sub-items */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Media Query for Desktop View */
+@media screen and (min-width: 768px) {
+  .menu {
+    left: 0; /* Always open for desktop */
+    animation: slideIn 0.5s forwards; /* Add animation on load for desktop */
+    width: 100%;
+  }
+
+  .menu-btn,
+  .close-btn {
+    display: none; /* Hide menu button and close button for desktop */
+  }
+
+  .menu li a {
+    max-width: 100%; /* Full width for desktop */
+  }
+}
+
+/* Mobile View Styles */
+@media screen and (max-width: 767px) {
+  .menu {
+    /* left: -250px;  */
+  }
+
+  .menu-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f8ff; /* Very light green background */
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu-btn:hover {
+    background-color: #d3ffd3; /* Very light green on hover */
+  }
+
+  /* Close Button for Mobile View (Top Right) */
+  .close-btn {
+    position: relative;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .menu ul {
+    list-style: none;
+    padding: 20px 0px 0px 0px;
+    margin: 0;
+  }
+
+  /* Adjust sub-menu animation for mobile */
+  .sub-menu {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s; /* Delay for staggered animation on mobile */
+  }
+}

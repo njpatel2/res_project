@@ -106,7 +106,7 @@ debugger;
           <li className="nav-item" data-item="dashboard">
             <NavLink
               className={`nav-link ${activeItem === 'dashboard' ? 'activeLink' : ''}`}
-              to="/"
+              to="/dashboard"
               onClick={(event) => handleNavItemClick(event, 'dashboard')}
             >
               <i className="fas fa-tachometer-alt"></i>Dashboard
@@ -124,7 +124,7 @@ debugger;
           <li className="nav-item" data-item="about">
             <NavLink
               className={`nav-link ${activeItem === 'about' ? 'activeLink' : ''}`}
-              to="/"
+              to="/dashboard"
               onClick={(event) => handleNavItemClick(event, 'about')}
             >
               <i className="fas fa-tachometer-alt"></i>about
@@ -133,7 +133,7 @@ debugger;
           <li className="nav-item" data-item="feedback">
             <NavLink
               className={`nav-link ${activeItem === 'feedback' ? 'activeLink' : ''}`}
-              to="/"
+              to="/dashboard"
               onClick={(event) => handleNavItemClick(event, 'feedback')}
             >
               <i className="fas fa-tachometer-alt"></i>feedback
@@ -142,7 +142,7 @@ debugger;
           <li className="nav-item" data-item="login">
             <NavLink
               className={`nav-link ${activeItem === 'login' ? 'activeLink' : ''}`}
-              to="/"
+              to="/dashboard"
               onClick={(event) => handleNavItemClick(event, 'login')}
             >
               <i className="fas fa-tachometer-alt"></i>login

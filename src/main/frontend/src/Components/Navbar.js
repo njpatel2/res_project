@@ -7,14 +7,14 @@ const Navbar = () => {
   
   let isfirstTime = 0;
   const navItems = [
-    { name: "Dashboard", dataItem: "dashboard" , iconClass: "fas fa-tachometer-alt", url:""},
+    { name: "Dashboard", dataItem: "dashboard" , iconClass: "fas fa-tachometer-alt", url:"dashboard"},
     { name: "Location", dataItem: "location" , iconClass: "fas fa-tachometer-alt", url:"location"},
-    { name: "About", dataItem: "about" , iconClass: "fas fa-tachometer-alt", url:""},
-    { name: "Feedback", dataItem: "feedback" , iconClass: "fas fa-tachometer-alt", url:""},
-    { name: "Login", dataItem: "login" , iconClass: "fas fa-tachometer-alt", url:""},
+    { name: "About", dataItem: "about" , iconClass: "fas fa-tachometer-alt", url:"dashboard"},
+    { name: "Feedback", dataItem: "feedback" , iconClass: "fas fa-tachometer-alt", url:"dashboard"},
+    { name: "Login", dataItem: "login" , iconClass: "fas fa-tachometer-alt", url:"dashboard"},
   ];
 
-  const storedActiveItem = localStorage.getItem("activeNavItem") || "dashboard";
+  const storedActiveItem = localStorage.getItem("activeNavItem") || "location";
   const [activeItem, setActiveItem] = useState(storedActiveItem);
   const [horiSelectorStyles, setHoriSelectorStyles] = useState({});
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
@@ -33,10 +33,10 @@ const Navbar = () => {
       handleNavItemClick(
         {
           currentTarget: document.querySelector(
-            '.nav-item[data-item="dashboard"]'
+            '.nav-item[data-item="location"]'
           ),
         },
-        "dashboard"
+        "location"
       );
     }
   }, []);

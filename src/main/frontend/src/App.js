@@ -37,8 +37,9 @@ function App() {
   <BrowserRouter>
   <Navbar />
     <Routes>
-      <Route exact path="/" element={<RestaurentDetails />} />
+      <Route exact path="/dashboard" element={<RestaurentDetails />} />
       <Route exact path="/location" element={<Location />} />
+      <Route exact path="/" element={<Location />} />
     </Routes>
   </BrowserRouter>
   );
